@@ -1,0 +1,29 @@
+---
+# This playbook deploys the whole application stack in this site.  
+
+ - hosts: staging2
+   tasks:
+    - debug: var=hoge
+    - debug: var=huga
+
+ - hosts: staging
+   vars:
+     hoge: vars_hoge   #最優先
+   tasks:
+    - debug: var=hoge
+    - debug: var=huga
+
+ - hosts: web
+   tasks:
+    - debug: var=hoge
+    - debug: var=huga
+
+ - hosts: db
+   tasks:
+    - debug: var=hoge
+    - debug: var=huga
+
+ - hosts: zaiko
+   tasks:
+    - debug: var=hoge
+    - debug: var=huga
